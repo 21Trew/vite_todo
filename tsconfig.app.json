@@ -24,7 +24,10 @@
     "allowSyntheticDefaultImports": true,
 
     /* Testing */
-    "types": ["vitest/globals", "@testing-library/jest-dom", "@testing-library/react"],
+    "types": [
+      "vitest/globals", "@testing-library/jest-dom", "@testing-library/react"
+    ],
+    "composite": true,
   },
   "include": ["src", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts"]
