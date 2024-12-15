@@ -1,5 +1,5 @@
 {
-  "files": ["src/**/*.tsx"],
+  "files": ["src/**/**/*.tsx"],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
