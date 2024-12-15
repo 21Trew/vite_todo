@@ -1,6 +1,6 @@
 import './App.css'
 import Header from "./components/Header.tsx";
-import TodoList from "./components/List.tsx";
+import TodoList from "./components/TodoList.tsx";
 
 function App() {
 
