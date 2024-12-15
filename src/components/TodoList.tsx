@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Input, Button, Tabs, Space, Typography, List, Checkbox } from 'antd';
 
+import { Todo } from "./interfaces.ts";
+
 const TodoList: React.FC = () => {
-	const [todos, setTodos] = useState(() => {
+	const [todos, setTodos] = useState<Todo[]>(() => {
 		const savedTodos = localStorage.getItem('todoItems');
 		return savedTodos ? JSON.parse(savedTodos) : [];
 	});
 	
-	// Here's the change
 	const [nextId, setNextId] = useState(() => {
 		const savedTodos = localStorage.getItem('todoItems');
 		const parsedTodos = savedTodos ? JSON.parse(savedTodos) : [];
@@ -39,7 +40,7 @@ const TodoList: React.FC = () => {
 		localStorage.setItem('todoItems', JSON.stringify(updatedTodos));
 	};
 	
-	const renderTodoList = (filterCondition) => (
+	const renderTodoList = (filterCondition: (todo: Todo) => boolean) => (
 		<List
 			style={{ textAlign: 'left', maxHeight: '350px', overflowY: 'auto' }}
 			bordered
