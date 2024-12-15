@@ -12,7 +12,7 @@ const TodoList: React.FC = () => {
 	const [nextId, setNextId] = useState<Todo['id']>(() => {
 		const savedTodos = localStorage.getItem('todoItems');
 		const parsedTodos = savedTodos ? JSON.parse(savedTodos) : [];
-		return parsedTodos.length ? Math.max(...parsedTodos.map(todo => todo.id)) + 1 : 1;
+		return parsedTodos.length ? Math.max(...parsedTodos.map((todo: Todo) => todo.id)) + 1 : 1;
 	});
 	
 	const [inputValue, setInputValue] = useState('');
