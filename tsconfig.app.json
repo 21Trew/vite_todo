@@ -21,7 +21,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+
+    /* Testing */
+    "types": ["vitest/globals", "@testing-library/jest-dom", "@testing-library/react"],
   },
-  "include": ["src", "src/**/*.tsx"]
+  "include": ["src", "src/**/*.tsx"],
+  "exclude": ["node_modules", "**/*.test.ts"]
 }
