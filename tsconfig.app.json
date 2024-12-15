@@ -12,7 +12,6 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -28,8 +27,7 @@
       "vitest/globals", "@testing-library/jest-dom", "@testing-library/react"
     ],
     "composite": true,
-    "esModuleInterop": true,
-
+    "esModuleInterop": true
   },
   "include": ["src", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts"]
