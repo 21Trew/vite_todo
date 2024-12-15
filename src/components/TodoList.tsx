@@ -9,7 +9,7 @@ const TodoList: React.FC = () => {
 		return savedTodos ? JSON.parse(savedTodos) : [];
 	});
 	
-	const [nextId, setNextId] = useState(() => {
+	const [nextId, setNextId] = useState<Todo['id']>(() => {
 		const savedTodos = localStorage.getItem('todoItems');
 		const parsedTodos = savedTodos ? JSON.parse(savedTodos) : [];
 		return parsedTodos.length ? Math.max(...parsedTodos.map(todo => todo.id)) + 1 : 1;
