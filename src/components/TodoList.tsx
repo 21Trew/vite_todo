@@ -28,13 +28,13 @@ const TodoList: React.FC = () => {
 		}
 	};
 	
-	const removeTodo = (id) => {
+	const removeTodo = (id: Todo['id']) => {
 		const updatedTodos = todos.filter(todo => todo.id !== id);
 		setTodos(updatedTodos);
 		localStorage.setItem('todoItems', JSON.stringify(updatedTodos));
 	};
 	
-	const toggleTodo = (id) => {
+	const toggleTodo = (id: Todo['id']) => {
 		const updatedTodos = todos.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo));
 		setTodos(updatedTodos);
 		localStorage.setItem('todoItems', JSON.stringify(updatedTodos));
@@ -45,7 +45,7 @@ const TodoList: React.FC = () => {
 			style={{ textAlign: 'left', maxHeight: '350px', overflowY: 'auto' }}
 			bordered
 			dataSource={todos.filter(filterCondition)}
-			renderItem={(item) => (
+			renderItem={(item: Todo) => (
 				<List.Item actions={[
 					<Button type="link" onClick={() => toggleTodo(item.id)}>{item.completed ? 'Восстановить' : 'Выполнить'}</Button>,
 					<Button type="link" danger onClick={() => removeTodo(item.id)}>Удалить</Button>
